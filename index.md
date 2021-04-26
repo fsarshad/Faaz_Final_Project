@@ -12,5 +12,3 @@ The main objective of this project is to tell a story of the competition and det
 
 ### Original Website 
 [Open Here](https://fsarshad.github.io/Faaz_Final_Project/BetaREl.html)
-
-
