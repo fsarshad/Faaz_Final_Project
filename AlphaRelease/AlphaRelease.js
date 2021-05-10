@@ -3,7 +3,7 @@
 // Parse the Data
 d3.csv("./AlphaRelease/WorldCups.csv", function(data) {
     // set the dimensions and margins of the graph
-    var margin = {top: 20, right: 30, bottom: 40, left: 90},
+    var margin = {top: 40, right: 30, bottom: 40, left: 90},
         width = 460 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
 
@@ -45,6 +45,10 @@ d3.csv("./AlphaRelease/WorldCups.csv", function(data) {
     svg.append("g")
         .call(d3.axisLeft(y));
 
+
+    var div = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
 // Bars
     svg.selectAll("mybar")
         .data(data)
@@ -54,6 +58,11 @@ d3.csv("./AlphaRelease/WorldCups.csv", function(data) {
         .attr("y", function(d) { return y(d.GoalsScored); })
         .attr("width", x.bandwidth())
         .attr("height", function(d) { return height - y(d.GoalsScored); })
-        .attr("fill", "#69b3a2")
-
+        .attr("fill", "purple")
+        .on("mouseover", function(d) {
+        div.transition().duration(200).style("opacity", .9);
+        div .html( 'Number of goals scored that year '+d.GoalsScored+' | '+'Number of Matches Played that year '+d.MatchesPlayed)
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY - 28) + "px");})
+        .on("mouseout", function(d) {div.transition().duration(500).style("opacity", 0);})
 })
