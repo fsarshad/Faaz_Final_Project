@@ -3,7 +3,7 @@
 //Read the data
 d3.csv("./scatter_plot/WorldCups.csv", function(data) {
     // set the dimensions and margins of the graph
-    var margin = {top: 10, right: 30, bottom: 40, left: 50},
+    var margin = {top: 40, right: 30, bottom: 40, left: 50},
         width = 520 - margin.left - margin.right,
         height = 520 - margin.top - margin.bottom;
 
@@ -50,9 +50,16 @@ d3.csv("./scatter_plot/WorldCups.csv", function(data) {
         .attr("text-anchor", "end")
         .attr("transform", "rotate(-90)")
         .attr("y", -margin.left + 20)
-        .attr("x", -margin.top - height/2 + 20)
+        .attr("x", -margin.top - height/2 + 100)
         .text("MatchesPlayed")
 
+    svg.append("text")
+        .attr("x", (width / 2))
+        .attr("y", 0 - (margin.top / 400))
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .style("text-decoration", "underline")
+        .text("Matches Played from 1930-2014");
     // Add dots
     svg.append('g')
         .selectAll("dot")
@@ -63,13 +70,4 @@ d3.csv("./scatter_plot/WorldCups.csv", function(data) {
         .attr("cy", function (d) { return y(d.MatchesPlayed); } )
         .attr("r", 5)
         .style("fill","#619CFF")
-
-    svg.append("text")
-        .attr("x", (width / 2))
-        .attr("y", 0 - (margin.top / 400))
-        .attr("text-anchor", "middle")
-        .style("font-size", "16px")
-        .style("text-decoration", "underline")
-        .text("Matches Played from 1930-2014");
-
 })
