@@ -3,7 +3,7 @@ d3.csv("./line_chart/WorldCups.csv",
     // Now I can use this dataset:
     function(data) {
         // set the dimensions and margins of the graph
-        var margin = {top: 10, right: 30, bottom: 30, left: 60},
+        var margin = {top: 40, right: 30, bottom: 60, left: 60},
             width = 500 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
@@ -17,7 +17,7 @@ d3.csv("./line_chart/WorldCups.csv",
                 "translate(" + margin.left + "," + margin.top + ")");
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
-            .domain([1930,2015])
+            .domain([1930,2014])
             .range([ 0, width ]);
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
@@ -26,7 +26,7 @@ d3.csv("./line_chart/WorldCups.csv",
             .attr("class", "x label")
             .attr("text-anchor", "end")
             .attr("x", width - 200)
-            .attr("y", height + 30)
+            .attr("y", height + 40)
             .text("Years");
 
         // Add Y axis
@@ -48,7 +48,7 @@ d3.csv("./line_chart/WorldCups.csv",
             )
         svg.append("text")
             .attr("x", (width / 2))
-            .attr("y", 0 - (margin.top / 100))
+            .attr("y", 0 - (height / 15))
             .attr("text-anchor", "middle")
             .style("font-size", "16px")
             .style("text-decoration", "underline")
