@@ -1,7 +1,7 @@
 
 
 // Parse the Data
-d3.csv("./BarChart/WorldCups.csv", function(data) {
+d3.csv("./AlphaRelease/WorldCups.csv", function(data) {
     // set the dimensions and margins of the graph
     var margin = {top: 40, right: 30, bottom: 40, left: 90},
         width = 460 - margin.left - margin.right,
@@ -9,7 +9,7 @@ d3.csv("./BarChart/WorldCups.csv", function(data) {
 
 // append the svg object to the body of the page
     var svg = d3.select("body")
-        .select("#BarChart")
+        .select("#AlphaRelease")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
