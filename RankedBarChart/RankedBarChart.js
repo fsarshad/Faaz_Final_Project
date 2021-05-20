@@ -19,10 +19,10 @@ d3.csv("./RankedBarChart/Titles.csv", function(data) {
     // Add X axis
     var x = d3.scaleLinear()
         .domain([0,10])
-        .range([ 0, width ]);
+        .range([ 0, width]);
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x).tickFormat(d3.format(".4r")));
+        .call(d3.axisBottom(x));
     svg.append("text")
         .attr("class", "x label")
         .attr("text-anchor", "end")
