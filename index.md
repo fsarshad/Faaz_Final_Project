@@ -10,7 +10,7 @@ The main objective of this project is to tell a story of the competition and det
 ### Alpha Release
 [Open Here](https://docs.google.com/document/d/1vbPBqEMbk1wYo6REnvVnkSTSER9VYCPgOWl5ZTtKxsQ/edit?ts=60749079)
 
-### Original Website 
+### Beta Release  
 [Open Here](https://fsarshad.github.io/Faaz_Final_Project/BetaREl.html)
 
 #### Final Website 
