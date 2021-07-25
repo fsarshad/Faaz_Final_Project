@@ -4,7 +4,7 @@ Name: Faaz Arshad
 
 Description: 
 
-The main objective of this project is to tell a story of the competition and determine which FIFA World Cup from 1950-2014 was the best by visualizing the data on top four teams and their journey to there final placements. 
+The main objective of this project was to tell a story of the competition and determine which FIFA World Cup from 1950-2014 was the best by visualizing the data through the use of HTML, CSS, JavaScript, and D3. 
 
 
 ### Alpha Release
